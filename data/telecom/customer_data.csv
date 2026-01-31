@@ -1,0 +1,21 @@
+customer_id,customer_name,phone_number,email,subscription_plan,monthly_bill,data_usage_gb,call_minutes,sms_count,signup_date,status,region
+CUST001,John Smith,+1-555-0101,john.smith@email.com,Premium,89.99,125.5,450,320,2022-01-15,Active,North
+CUST002,Jane Doe,+1-555-0102,jane.doe@email.com,Basic,29.99,45.2,180,150,2022-02-20,Active,South
+CUST003,Bob Johnson,+1-555-0103,bob.j@email.com,Enterprise,199.99,350.8,1200,850,2021-11-10,Active,East
+CUST004,Alice Williams,+1-555-0104,alice.w@email.com,Premium,89.99,98.3,380,290,2022-03-05,Active,West
+CUST005,Charlie Brown,+1-555-0105,charlie.b@email.com,Basic,29.99,32.1,120,95,2022-04-12,Active,North
+CUST006,Diana Prince,+1-555-0106,diana.p@email.com,Premium,89.99,145.6,520,410,2021-12-18,Active,South
+CUST007,Edward Norton,+1-555-0107,edward.n@email.com,Enterprise,199.99,420.3,1500,1100,2021-10-25,Active,East
+CUST008,Fiona Green,+1-555-0108,fiona.g@email.com,Basic,29.99,28.7,95,75,2022-05-30,Active,West
+CUST009,George Miller,+1-555-0109,george.m@email.com,Premium,89.99,112.4,410,330,2022-01-22,Active,North
+CUST010,Helen Davis,+1-555-0110,helen.d@email.com,Basic,29.99,38.9,140,110,2022-06-15,Suspended,South
+CUST011,Ian Wilson,+1-555-0111,ian.w@email.com,Enterprise,199.99,380.2,1350,980,2021-09-08,Active,East
+CUST012,Julia Roberts,+1-555-0112,julia.r@email.com,Premium,89.99,135.8,480,370,2022-02-14,Active,West
+CUST013,Kevin Hart,+1-555-0113,kevin.h@email.com,Basic,29.99,42.3,160,125,2022-07-20,Active,North
+CUST014,Lisa Anderson,+1-555-0114,lisa.a@email.com,Premium,89.99,108.9,395,310,2022-03-28,Active,South
+CUST015,Michael Jackson,+1-555-0115,michael.j@email.com,Enterprise,199.99,395.6,1420,1050,2021-08-12,Cancelled,East
+CUST016,Nancy White,+1-555-0116,nancy.w@email.com,Basic,29.99,35.6,130,100,2022-08-05,Active,West
+CUST017,Oliver Stone,+1-555-0117,oliver.s@email.com,Premium,89.99,128.2,460,350,2022-04-10,Active,North
+CUST018,Patricia Lee,+1-555-0118,patricia.l@email.com,Basic,29.99,40.1,150,115,2022-09-12,Active,South
+CUST019,Quinn Taylor,+1-555-0119,quinn.t@email.com,Enterprise,199.99,410.5,1480,1080,2021-07-15,Active,East
+CUST020,Rachel Moore,+1-555-0120,rachel.m@email.com,Premium,89.99,142.7,510,390,2022-05-18,Active,West

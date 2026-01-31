@@ -1,0 +1,84 @@
+{
+  "dataset_name": "telecom_customer_data",
+  "domain": "telecom",
+  "description": "Telecom customer data including subscriptions, usage metrics, and billing information",
+  "file_path": "data/telecom/customer_data.csv",
+  "schema": {
+    "customer_id": {
+      "type": "string",
+      "description": "Unique customer identifier",
+      "nullable": false,
+      "primary_key": true
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Full name of the customer",
+      "nullable": false
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "Customer phone number",
+      "nullable": false,
+      "format": "phone"
+    },
+    "email": {
+      "type": "string",
+      "description": "Customer email address",
+      "nullable": true,
+      "format": "email"
+    },
+    "subscription_plan": {
+      "type": "string",
+      "description": "Subscription plan type (Basic, Premium, Enterprise)",
+      "nullable": false,
+      "enum": ["Basic", "Premium", "Enterprise"]
+    },
+    "monthly_bill": {
+      "type": "decimal",
+      "description": "Monthly billing amount in USD",
+      "nullable": false,
+      "min": 0
+    },
+    "data_usage_gb": {
+      "type": "decimal",
+      "description": "Monthly data usage in gigabytes",
+      "nullable": false,
+      "min": 0
+    },
+    "call_minutes": {
+      "type": "integer",
+      "description": "Monthly call minutes",
+      "nullable": false,
+      "min": 0
+    },
+    "sms_count": {
+      "type": "integer",
+      "description": "Monthly SMS count",
+      "nullable": false,
+      "min": 0
+    },
+    "signup_date": {
+      "type": "date",
+      "description": "Customer signup date",
+      "nullable": false,
+      "format": "YYYY-MM-DD"
+    },
+    "status": {
+      "type": "string",
+      "description": "Account status",
+      "nullable": false,
+      "enum": ["Active", "Suspended", "Cancelled"]
+    },
+    "region": {
+      "type": "string",
+      "description": "Geographic region",
+      "nullable": false
+    }
+  },
+  "sample_queries": [
+    "Calculate total revenue by subscription plan",
+    "Find customers with data usage above 100GB",
+    "Identify customers at risk of churn (high usage, low plan)",
+    "Aggregate usage metrics by region"
+  ]
+}

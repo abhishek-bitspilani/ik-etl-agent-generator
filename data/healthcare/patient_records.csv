@@ -1,0 +1,21 @@
+patient_id,patient_name,date_of_birth,gender,diagnosis_code,diagnosis_description,treatment_type,medication,dosage,visit_date,treatment_cost,outcome,doctor_id,department,insurance_type
+P001,Robert Chen,1985-03-15,M,I10,Essential hypertension,Medication,Lisinopril,10mg daily,2023-01-10,150.00,Improved,DR001,Cardiology,Private
+P002,Sarah Johnson,1990-07-22,F,C50.9,Malignant neoplasm of breast,Medication,Tamoxifen,20mg daily,2023-01-12,2500.00,Stable,DR002,Oncology,Private
+P003,Michael Brown,1978-11-05,M,M25.561,Pain in right knee,Therapy,Physical Therapy,3x weekly,2023-01-15,800.00,Improved,DR003,Orthopedics,Medicare
+P004,Emily Davis,1995-02-18,F,J06.9,Acute upper respiratory infection,Medication,Amoxicillin,500mg 3x daily,2023-01-20,75.00,Recovered,DR004,General,Medicaid
+P005,David Wilson,1982-09-30,M,I21.9,Acute myocardial infarction,Surgery,Coronary Bypass,NA,2023-01-25,45000.00,Improved,DR001,Cardiology,Private
+P006,Lisa Martinez,1988-04-12,F,M79.3,Panniculitis,Medication,Prednisone,40mg daily,2023-02-01,200.00,Stable,DR004,General,Private
+P007,James Taylor,1975-12-08,M,C34.10,Malignant neoplasm of upper lobe,Medication,Cisplatin,100mg/m2,2023-02-05,3500.00,Stable,DR002,Oncology,Medicare
+P008,Jennifer White,1992-06-25,F,Q66.89,Other congenital deformities of feet,Surgery,Foot Reconstruction,NA,2023-02-10,12000.00,Improved,DR003,Orthopedics,Private
+P009,Christopher Lee,1980-08-14,M,E11.9,Type 2 diabetes,Medication,Metformin,1000mg 2x daily,2023-02-15,120.00,Stable,DR004,General,Private
+P010,Amanda Garcia,1987-01-20,F,P07.3,Other low birth weight,Observation,NA,NA,2023-02-18,500.00,Stable,DR005,Pediatrics,Medicaid
+P011,Daniel Rodriguez,1979-05-03,M,S72.001A,Fracture of unspecified part of neck of right femur,Surgery,Hip Replacement,NA,2023-02-22,35000.00,Improved,DR003,Orthopedics,Medicare
+P012,Michelle Anderson,1993-10-17,F,I20.9,Angina pectoris,Medication,Nitroglycerin,0.4mg as needed,2023-03-01,180.00,Improved,DR001,Cardiology,Private
+P013,Matthew Thomas,1984-07-09,M,C92.10,Chronic myeloid leukemia,Medication,Imatinib,400mg daily,2023-03-05,4500.00,Stable,DR002,Oncology,Private
+P014,Jessica Jackson,1991-03-28,F,M25.512,Pain in left shoulder,Therapy,Physical Therapy,2x weekly,2023-03-10,600.00,Improved,DR003,Orthopedics,Medicaid
+P015,Andrew Harris,1977-12-15,M,J44.1,Chronic obstructive pulmonary disease,Medication,Albuterol,90mcg 2 puffs,2023-03-15,95.00,Stable,DR004,General,Medicare
+P016,Ashley Clark,1989-09-04,F,E78.5,Hyperlipidemia,Medication,Atorvastatin,20mg daily,2023-03-20,110.00,Improved,DR001,Cardiology,Private
+P017,Joshua Lewis,1983-04-21,M,C61,Malignant neoplasm of prostate,Medication,Leuprolide,7.5mg monthly,2023-03-25,2800.00,Stable,DR002,Oncology,Medicare
+P018,Brittany Walker,1994-11-08,F,K59.00,Constipation,Medication,Miralax,17g daily,2023-04-01,45.00,Recovered,DR004,General,Medicaid
+P019,Ryan Hall,1981-06-13,M,I25.10,Atherosclerotic heart disease,Medication,Aspirin,81mg daily,2023-04-05,25.00,Stable,DR001,Cardiology,Private
+P020,Nicole Allen,1986-02-27,F,P07.1,Low birth weight,Observation,NA,NA,2023-04-10,600.00,Stable,DR005,Pediatrics,Private

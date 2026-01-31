@@ -5,6 +5,8 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from typing import Dict, Any
 import json
 
+from ..utils.notebook_builder import build_test_notebook, notebook_to_json
+
 
 class TestGenerator:
     """Generates test code for PySpark pipelines."""
@@ -33,6 +35,8 @@ Requirements:
 8. Include test data setup and teardown
 9. Follow pytest conventions and naming
 10. Make tests maintainable and readable
+11. Follow PEP 8 style guidelines - IMPORTANT: Keep lines under 120 characters
+12. Break long lines appropriately - use parentheses for line continuation
 
 The tests should be comprehensive and cover the pipeline's functionality thoroughly."""
 
@@ -47,13 +51,19 @@ Pipeline Code:
 ```
 
 Please generate:
-1. Complete test code using pytest
-2. A descriptive test file name (e.g., test_pipeline_name.py)
+1. Complete test code using pytest (ready to be put in a Jupyter notebook)
+2. A descriptive test file name (e.g., test_pipeline_name.ipynb)
 3. A brief description of what the tests cover
+
+IMPORTANT: The code will be placed in a Jupyter notebook, so:
+- Organize tests logically (setup first, then individual test functions)
+- Include clear comments explaining each test
+- Make tests executable in notebook cells
+- Use pytest conventions
 
 Return your response as JSON with the following structure:
 {{
-    "file_name": "test_pipeline_name.py",
+    "file_name": "test_pipeline_name.ipynb",
     "description": "Brief description of test coverage",
     "code": "Complete test code here"
 }}"""
@@ -78,11 +88,57 @@ Return your response as JSON with the following structure:
             content = content.strip()
             
             result = json.loads(content)
-            return result
+            
+            # Convert to notebook format
+            file_name = result.get("file_name", "test_pipeline.ipynb")
+            if not file_name.endswith(".ipynb"):
+                # Replace .py with .ipynb
+                file_name = file_name.replace(".py", ".ipynb")
+            
+            # Ensure code is a string
+            test_code = result.get("code", "")
+            if isinstance(test_code, list):
+                # Convert each item to string before joining
+                test_code = '\n'.join(str(item) for item in test_code)
+            elif not isinstance(test_code, str):
+                test_code = str(test_code)
+            
+            # Build notebook
+            notebook = build_test_notebook(
+                title=file_name.replace(".ipynb", "").replace("_", " ").title(),
+                description=result.get("description", "Generated tests for PySpark pipeline"),
+                test_code=test_code,
+                pipeline_file=None  # Could be passed if needed
+            )
+            
+            # Convert notebook to JSON string
+            notebook_json = notebook_to_json(notebook)
+            
+            return {
+                "file_name": file_name,
+                "description": result.get("description", "Generated tests for PySpark pipeline"),
+                "code": notebook_json  # Store notebook JSON as "code"
+            }
         except json.JSONDecodeError:
             # Fallback: try to extract code from markdown
+            file_name = "test_pipeline.ipynb"
+            # Ensure code is a string
+            test_code = response.content
+            if isinstance(test_code, list):
+                # Convert each item to string before joining
+                test_code = '\n'.join(str(item) for item in test_code)
+            elif not isinstance(test_code, str):
+                test_code = str(test_code)
+            
+            notebook = build_test_notebook(
+                title="Test Pipeline",
+                description="Generated tests for PySpark pipeline",
+                test_code=test_code
+            )
+            notebook_json = notebook_to_json(notebook)
+            
             return {
-                "file_name": "test_pipeline.py",
+                "file_name": file_name,
                 "description": "Generated tests for PySpark pipeline",
-                "code": response.content
+                "code": notebook_json
             }

@@ -1,0 +1,99 @@
+{
+  "dataset_name": "healthcare_patient_records",
+  "domain": "healthcare",
+  "description": "Patient medical records including diagnoses, treatments, medications, and outcomes",
+  "file_path": "data/healthcare/patient_records.csv",
+  "schema": {
+    "patient_id": {
+      "type": "string",
+      "description": "Unique patient identifier",
+      "nullable": false,
+      "primary_key": true
+    },
+    "patient_name": {
+      "type": "string",
+      "description": "Patient full name",
+      "nullable": false
+    },
+    "date_of_birth": {
+      "type": "date",
+      "description": "Patient date of birth",
+      "nullable": false,
+      "format": "YYYY-MM-DD"
+    },
+    "gender": {
+      "type": "string",
+      "description": "Patient gender",
+      "nullable": false,
+      "enum": ["M", "F", "Other"]
+    },
+    "diagnosis_code": {
+      "type": "string",
+      "description": "ICD-10 diagnosis code",
+      "nullable": false
+    },
+    "diagnosis_description": {
+      "type": "string",
+      "description": "Human-readable diagnosis description",
+      "nullable": false
+    },
+    "treatment_type": {
+      "type": "string",
+      "description": "Type of treatment provided",
+      "nullable": false,
+      "enum": ["Medication", "Surgery", "Therapy", "Observation"]
+    },
+    "medication": {
+      "type": "string",
+      "description": "Prescribed medication name",
+      "nullable": true
+    },
+    "dosage": {
+      "type": "string",
+      "description": "Medication dosage",
+      "nullable": true
+    },
+    "visit_date": {
+      "type": "date",
+      "description": "Date of medical visit",
+      "nullable": false,
+      "format": "YYYY-MM-DD"
+    },
+    "treatment_cost": {
+      "type": "decimal",
+      "description": "Cost of treatment in USD",
+      "nullable": false,
+      "min": 0
+    },
+    "outcome": {
+      "type": "string",
+      "description": "Treatment outcome",
+      "nullable": false,
+      "enum": ["Recovered", "Improved", "Stable", "Deteriorated"]
+    },
+    "doctor_id": {
+      "type": "string",
+      "description": "Attending doctor identifier",
+      "nullable": false
+    },
+    "department": {
+      "type": "string",
+      "description": "Medical department",
+      "nullable": false,
+      "enum": ["Cardiology", "Oncology", "Orthopedics", "Pediatrics", "General"]
+    },
+    "insurance_type": {
+      "type": "string",
+      "description": "Insurance coverage type",
+      "nullable": false,
+      "enum": ["Private", "Medicare", "Medicaid", "Uninsured"]
+    }
+  },
+  "sample_queries": [
+    "Calculate total treatment costs by department",
+    "Find patients with specific diagnosis codes",
+    "Analyze treatment outcomes by medication",
+    "Identify high-cost treatments",
+    "Track patient visits over time"
+  ]
+}

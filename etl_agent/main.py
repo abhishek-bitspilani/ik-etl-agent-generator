@@ -8,12 +8,17 @@ from pathlib import Path
 from .config import get_settings
 from .agent.workflow import ETLAgentWorkflow
 
-# Configure logging
+# Configure logging with detailed format
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s [%(levelname)8s] %(message)s',
+    datefmt='%H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+# Set workflow logger to INFO level for detailed output
+workflow_logger = logging.getLogger('etl_agent.agent.workflow')
+workflow_logger.setLevel(logging.INFO)
 
 
 def main():
@@ -79,6 +84,13 @@ def main():
         if result.get("error"):
             print(f"\n❌ Error: {result['error']}")
             sys.exit(1)
+        
+        if result.get("dataset_info"):
+            dataset = result["dataset_info"]
+            print(f"\n📊 Dataset Detected:")
+            print(f"   Name: {dataset.dataset_name}")
+            print(f"   Domain: {dataset.domain}")
+            print(f"   File: {dataset.file_path}")
         
         if result.get("pipeline_code"):
             pipeline = result["pipeline_code"]
