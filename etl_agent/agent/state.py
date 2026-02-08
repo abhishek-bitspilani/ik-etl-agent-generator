@@ -1,6 +1,6 @@
 """State management for LangGraph agent."""
 
-from typing import TypedDict, Optional, List
+from typing import TypedDict, Optional, List, Dict, Any
 from pydantic import BaseModel
 
 
@@ -41,9 +41,19 @@ class Documentation(BaseModel):
     description: str
 
 
+class DatasetInfo(BaseModel):
+    """Information about the dataset being used."""
+    dataset_name: str
+    domain: str
+    file_path: str
+    schema_description: str
+    schema_metadata: str  # Renamed from schema_json to avoid BaseModel shadowing
+
+
 class AgentState(TypedDict):
     """State for the ETL agent workflow."""
     user_story: str
+    dataset_info: Optional[DatasetInfo]  # Detected dataset information
     pipeline_code: Optional[PipelineCode]
     test_code: Optional[TestCode]
     validation_result: Optional[ValidationResult]
